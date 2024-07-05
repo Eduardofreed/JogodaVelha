@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // Habilitar bordas para uma melhor experiência de usuário
 
+        // Recebe a dificuldade do Intent
         dificuldade = intent.getStringExtra("DIFFICULTY") ?: "easy"
 
+        // Configura os botões
         setupButtons()
     }
 
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     fun buttonClick(view: View) {
         val buttonSelecionado = view as Button
 
+        // Atualiza o tabuleiro e o estado do botão baseado no ID do botão clicado
         when (buttonSelecionado.id) {
             binding.buttonZero.id -> tabuleiro[0][0] = jogadorAtual
             binding.buttonUm.id -> tabuleiro[0][1] = jogadorAtual
@@ -55,9 +58,11 @@ class MainActivity : AppCompatActivity() {
             binding.buttonOito.id -> tabuleiro[2][2] = jogadorAtual
         }
 
+        // Atualiza a aparência do botão clicado
         buttonSelecionado.setBackgroundColor(Color.BLUE)
         buttonSelecionado.isEnabled = false
 
+        // Verifica se há um vencedor
         val vencedor = verificaVencedor(tabuleiro)
 
         if (!vencedor.isNullOrBlank()) {
@@ -66,23 +71,26 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        // Troca para o jogador "O"
         jogadorAtual = "O"
 
-        // Adicionar um delay antes da jogada do computador
+        // Adiciona um delay antes da jogada do computador
         lifecycleScope.launch {
             delay(1000) // Delay de 1 segundo
             jogadaComputador()
 
+            // Verifica novamente se há um vencedor
             val novoVencedor = verificaVencedor(tabuleiro)
             if (!novoVencedor.isNullOrBlank()) {
                 Toast.makeText(this@MainActivity, "Vencedor: $novoVencedor", Toast.LENGTH_LONG).show()
                 reiniciarJogo()
             } else {
-                jogadorAtual = "X"
+                jogadorAtual = "X" // Retorna para o jogador "X"
             }
         }
     }
 
+    // Função que realiza a jogada do computador baseada na dificuldade
     private fun jogadaComputador() {
         when (dificuldade) {
             "easy" -> jogadaFacil()
@@ -91,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Jogada fácil: Escolhe uma posição aleatória
     private fun jogadaFacil() {
         var rX: Int
         var rY: Int
@@ -106,16 +115,17 @@ class MainActivity : AppCompatActivity() {
         buttonComputador.isEnabled = false
     }
 
+    // Jogada normal: Pode ser melhorada com lógica intermediária
     private fun jogadaNormal() {
-        // Adicione uma lógica intermediária aqui
         jogadaFacil() // Temporariamente usando jogadaFacil
     }
 
+    // Jogada difícil: Pode ser melhorada com lógica avançada
     private fun jogadaDificil() {
-        // Adicione uma lógica avançada aqui
         jogadaFacil() // Temporariamente usando jogadaFacil
     }
 
+    // Mapeia a posição da matriz para o botão correspondente
     private fun getButtonByPosition(x: Int, y: Int): Button {
         return when (x * 3 + y) {
             0 -> binding.buttonZero
@@ -131,6 +141,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Verifica se há um vencedor
     private fun verificaVencedor(tabuleiro: Array<Array<String>>): String? {
         // Verifica linhas e colunas
         for (i in 0 until 3) {
@@ -156,6 +167,7 @@ class MainActivity : AppCompatActivity() {
         return null
     }
 
+    // Reinicia o jogo
     private fun reiniciarJogo() {
         tabuleiro.forEach { linha ->
             linha.fill("")
@@ -196,9 +208,10 @@ class MainActivity : AppCompatActivity() {
             setBackgroundColor(Color.LTGRAY)
             isEnabled = true
         }
-        jogadorAtual = "X"
+        jogadorAtual = "X" // Reinicia para o jogador "X"
     }
 
+    // Configura os listeners dos botões
     private fun setupButtons() {
         binding.buttonZero.setOnClickListener { buttonClick(it) }
         binding.buttonUm.setOnClickListener { buttonClick(it) }
