@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/background_gradient"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Jogo da Velha"
         android:gravity="center"
         android:textSize="50sp"
-        android:textColor="#00f"/>
+        android:textColor="#00008B"
+        android:layout_marginBottom="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,25 +24,34 @@
         android:gravity="center"
         android:orientation="horizontal">
         <Button
+            android:text=""
+            android:contentDescription="Button Zero"
             android:textSize="20sp"
             android:id="@+id/buttonZero"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
         <Button
+            android:text=""
+            android:contentDescription="Button Um"
             android:textSize="20sp"
             android:id="@+id/buttonUm"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick"/>
         <Button
+            android:text=""
+            android:contentDescription="Button Dois"
             android:textSize="20sp"
             android:id="@+id/buttonDois"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
     </LinearLayout>
 
@@ -49,25 +61,34 @@
         android:gravity="center"
         android:orientation="horizontal">
         <Button
+            android:text=""
+            android:contentDescription="Button Três"
             android:textSize="20sp"
             android:id="@+id/buttonTres"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
         <Button
+            android:text=""
+            android:contentDescription="Button Quatro"
             android:textSize="20sp"
             android:id="@+id/buttonQuatro"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
         <Button
+            android:text=""
+            android:contentDescription="Button Cinco"
             android:textSize="20sp"
             android:id="@+id/buttonCinco"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
     </LinearLayout>
 
@@ -77,25 +98,34 @@
         android:gravity="center"
         android:orientation="horizontal">
         <Button
+            android:text=""
+            android:contentDescription="Button Seis"
             android:textSize="20sp"
             android:id="@+id/buttonSeis"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
         <Button
+            android:text=""
+            android:contentDescription="Button Sete"
             android:textSize="20sp"
             android:id="@+id/buttonSete"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
         <Button
+            android:text=""
+            android:contentDescription="Button Oito"
             android:textSize="20sp"
             android:id="@+id/buttonOito"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="5dp"
+            android:background="@drawable/button_background"
             android:onClick="buttonClick" />
     </LinearLayout>
 
