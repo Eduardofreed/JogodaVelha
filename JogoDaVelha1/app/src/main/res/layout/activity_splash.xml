@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background_gradient"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SplashActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogo da Velha"
+        android:textSize="50sp"
+        android:textColor="#00008B"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/buttonEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fácil"
+        android:background="@drawable/button_background"
+        android:textSize="20sp"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/buttonNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normal"
+        android:background="@drawable/button_background"
+        android:textSize="20sp"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/buttonHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difícil"
+        android:background="@drawable/button_background"
+        android:textSize="20sp"
+        android:layout_margin="10dp" />
+
+</LinearLayout>
