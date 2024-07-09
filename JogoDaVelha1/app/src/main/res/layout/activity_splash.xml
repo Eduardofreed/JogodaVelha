@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background_gradient"
+    android:background="@drawable/blackhole"
     tools:context=".SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jogo da Velha"
-        android:textSize="50sp"
-        android:textColor="#FF69B4"
+        android:text="Jogo da Velha - Versão Espacial"
+        android:textSize="40sp"
+        android:textColor="#9336FF"
         android:layout_marginBottom="30dp" />
 
     <Button
